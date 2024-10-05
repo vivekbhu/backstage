@@ -13,11 +13,11 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: team-api
+  owner: vsrivastava
   definition: |
     openapi: 3.0.0
     info: 
-      title: Link Example
+      title: User
       version: 1.0.0
     paths: 
       /2.0/users/{username}: 
