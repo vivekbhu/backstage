@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: policy-api
-  description: API for managing policies
+  name: customer-api
+  description: API for managing customers
   tags:
     - links
     - api
@@ -10,5 +10,4 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: vsrivastava
   definition: $text:'https://raw.githubusercontent.com/vivekbhu/backstage/refs/heads/main/customer1.yaml'
