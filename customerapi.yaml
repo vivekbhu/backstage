@@ -1,4 +1,4 @@
-apiVersion: backstage.io/v1alpha1
+apiVersion: backstage.io/v1beta3
 kind: API
 metadata:
   name: customer-api
@@ -190,4 +190,3 @@ spec:
           required:
             - name
             - email
-      
