@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: customer-api
+  name: customer-New-pi
   description: API for managing customers
   tags:
     - links
@@ -14,7 +14,7 @@ spec:
   definition: |
     openapi: 3.0.0
     info:
-      title: Customer API
+      title: NewCustomer API
       description: API for managing customers
       version: 1.0.0
     servers:
