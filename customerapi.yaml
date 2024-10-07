@@ -191,3 +191,5 @@ spec:
           required:
             - name
             - email
+documentation:
+  url: index.md
