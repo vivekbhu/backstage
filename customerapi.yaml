@@ -192,4 +192,4 @@ spec:
             - name
             - email
 documentation:
-  url: index.md
+  url: ./docs/index.md
