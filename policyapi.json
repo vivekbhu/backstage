@@ -49,7 +49,6 @@
           "Customers"
         ],
         "requestBody": {
-          "description": "Customer data to create",
           "required": true,
           "content": {
             "application/json": {
@@ -91,10 +90,10 @@
             "name": "customerId",
             "in": "path",
             "required": true,
-            "description": "ID of the customer to fetch",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "ID of the customer to fetch"
           }
         ],
         "responses": {
@@ -127,14 +126,13 @@
             "name": "customerId",
             "in": "path",
             "required": true,
-            "description": "ID of the customer to update",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "ID of the customer to update"
           }
         ],
         "requestBody": {
-          "description": "Customer data to update",
           "required": true,
           "content": {
             "application/json": {
@@ -177,10 +175,10 @@
             "name": "customerId",
             "in": "path",
             "required": true,
-            "description": "ID of the customer to delete",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "ID of the customer to delete"
           }
         ],
         "responses": {
