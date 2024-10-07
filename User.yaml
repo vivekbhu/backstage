@@ -11,4 +11,4 @@ spec:
   type: openapi
   lifecycle: production
   owner: vsrivastava
-  definition: $text:'https://gist.github.com/lenage/08964335de9064540c8c335fb849c5da'
+  definition: $text:'https://raw.githubusercontent.com/vivekbhu/backstage/refs/heads/main/policyapi.json'
