@@ -1,0 +1,195 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: customer-New-pi
+  description: API for managing customers
+  tags:
+    - links
+    - api
+    - repositories
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-claims
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: NewCustomer API
+      description: API for managing customers
+      version: 1.0.0
+    servers:
+      - url: https://api.example.com
+        description: Production server
+      - url: https://staging-api.example.com
+        description: Staging server
+    paths:
+      /customers:
+        get:
+          summary: Get all customers
+          operationId: getCustomers
+          tags:
+            - Customers
+          responses:
+            '200':
+              description: A list of customers
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Customer'
+            '500':
+              description: Server error
+        post:
+          summary: Create a new customer
+          operationId: createCustomer
+          tags:
+            - Customers
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/CustomerCreate'
+          responses:
+            '201':
+              description: Customer created successfully
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Customer'
+            '400':
+              description: Invalid input
+            '500':
+              description: Server error
+      /customers/{customerId}:
+        get:
+          summary: Get customer by ID
+          operationId: getCustomerById
+          tags:
+            - Customers
+          parameters:
+            - name: customerId
+              in: path
+              required: true
+              schema:
+                type: string
+              description: ID of the customer to fetch
+          responses:
+            '200':
+              description: The customer details
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Customer'
+            '404':
+              description: Customer not found
+            '500':
+              description: Server error
+        put:
+          summary: Update customer
+          operationId: updateCustomer
+          tags:
+            - Customers
+          parameters:
+            - name: customerId
+              in: path
+              required: true
+              schema:
+                type: string
+              description: ID of the customer to update
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/CustomerUpdate'
+          responses:
+            '200':
+              description: Customer updated successfully
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Customer'
+            '400':
+              description: Invalid input
+            '404':
+              description: Customer not found
+            '500':
+              description: Server error
+        delete:
+          summary: Delete customer by ID
+          operationId: deleteCustomer
+          tags:
+            - Customers
+          parameters:
+            - name: customerId
+              in: path
+              required: true
+              schema:
+                type: string
+              description: ID of the customer to delete
+          responses:
+            '204':
+              description: Customer deleted successfully
+            '404':
+              description: Customer not found
+            '500':
+              description: Server error
+    components:
+      schemas:
+        Customer:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Unique identifier for the customer
+            name:
+              type: string
+              description: Customer name
+            email:
+              type: string
+              description: Customer email address
+            phone:
+              type: string
+              description: Customer phone number
+            createdAt:
+              type: string
+              format: date-time
+              description: Date and time when the customer was created
+          required:
+            - id
+            - name
+            - email
+        CustomerCreate:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Customer name
+            email:
+              type: string
+              description: Customer email address
+            phone:
+              type: string
+              description: Customer phone number
+          required:
+            - name
+            - email
+        CustomerUpdate:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Customer name
+            email:
+              type: string
+              description: Customer email address
+            phone:
+              type: string
+              description: Customer phone number
+          required:
+            - name
+            - email
+    documentation:
+      url: ./docs/index.md
