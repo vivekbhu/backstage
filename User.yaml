@@ -10,4 +10,5 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
+  owner: team-claims
   definition: $text:'https://raw.githubusercontent.com/vivekbhu/backstage/refs/heads/main/customer1.yaml'
