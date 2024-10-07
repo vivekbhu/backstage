@@ -11,4 +11,4 @@ spec:
   type: openapi
   lifecycle: production
   owner: vsrivastava
-  definition: $text:'https://raw.githubusercontent.com/vivekbhu/backstage/refs/heads/main/policyapi.json'
+  definition: $text:'https://raw.githubusercontent.com/vivekbhu/backstage/refs/heads/main/customer.yaml'
