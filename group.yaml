@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: vsrivastava
+  namespace: default
+  description: Example group for vsrivastava
+spec:
+  type: team
+  profile:
+    displayName: V Srivastava Team
+    email: vivekbhu@gmail.com
+  members:
+    - user:default/vsrivastava
